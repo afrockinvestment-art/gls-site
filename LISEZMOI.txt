@@ -1,0 +1,30 @@
+SITE GLS : MISE EN LIGNE
+
+1. CONFIG (en haut du script de index.html)
+   - Numéro WhatsApp : déjà renseigné (+226 65 57 62 13).
+   - groupeInvestisseurs / groupeDiaspora : liens d'invitation des deux groupes WhatsApp.
+   - numeroPaiement : à changer si ton numéro Orange Money, Moov ou Wave est différent.
+   - formEndpoint (facultatif) : URL du script Google (google-apps-script.gs) pour garder la liste des inscrits.
+
+2. HÉBERGEMENT AVEC MISE À JOUR AUTOMATIQUE DES COURS (recommandé)
+   a. Crée un dépôt GitHub et envoies-y tout le dossier (y compris le dossier caché .github).
+   b. Sur app.netlify.com : « Add new site » > « Import from GitHub » > choisis le dépôt. Aucun réglage de build.
+   c. Chaque soir de séance à 17 h 15 GMT, GitHub lance scripts/maj_marche.py :
+      il récupère la cote sur brvm.org et les cours de la BCEAO, met à jour data/*.json,
+      et Netlify republie le site tout seul.
+   d. Pour tester tout de suite : onglet « Actions » du dépôt > « Mise à jour des cours » > « Run workflow ».
+
+3. HÉBERGEMENT SIMPLE (sans mise à jour automatique)
+   Glisse le dossier sur app.netlify.com/drop. Les cours resteront ceux de data/*.json
+   tant que tu ne remplaces pas ces fichiers.
+
+4. DEVISES
+   L'euro est à parité fixe (655,957 F). Les autres devises viennent de la BCEAO, actualisées
+   en direct dans le navigateur par ExchangeRate-API quand le site est en ligne (c'est aussi
+   ce qui ajoute le rouble, que la BCEAO ne publie pas).
+
+5. LA LECTURE DE LUDOVIC
+   Le petit commentaire sous les cours se modifie dans data/marche.json, champ "commentaire".
+
+6. VIDÉO
+   Remplace gls-lancement.mp4 par la pub finale (même nom) et poster.jpg par une image de la vidéo.
