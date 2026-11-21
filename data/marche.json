@@ -1,0 +1,318 @@
+{
+ "seance": "2026-11-18",
+ "statut": "provisoire",
+ "source": "BRVM, via brvmdata.com et Le Jecos",
+ "indices": [
+  {
+   "n": "BRVM Composite",
+   "c": 500.95,
+   "v": -0.34
+  },
+  {
+   "n": "BRVM 30",
+   "c": 243.09,
+   "v": -0.02
+  },
+  {
+   "n": "BRVM Prestige",
+   "c": 187.78,
+   "v": -0.22
+  },
+  {
+   "n": "BRVM Principal",
+   "c": 348.27,
+   "v": -0.53
+  }
+ ],
+ "actions": [
+  {
+   "s": "ABJC",
+   "n": "Servair Abidjan CI",
+   "c": 3165.0,
+   "v": null
+  },
+  {
+   "s": "BBGC",
+   "n": "Bridge Bank Group CI",
+   "c": 9000.0,
+   "v": null
+  },
+  {
+   "s": "BICB",
+   "n": "BIIC Bénin",
+   "c": 8005.0,
+   "v": null
+  },
+  {
+   "s": "BICC",
+   "n": "BICI CI",
+   "c": 32695.0,
+   "v": null
+  },
+  {
+   "s": "BNBC",
+   "n": "Bernabé CI",
+   "c": 1770.0,
+   "v": null
+  },
+  {
+   "s": "BOAB",
+   "n": "Bank of Africa Bénin",
+   "c": 9200.0,
+   "v": null
+  },
+  {
+   "s": "BOABF",
+   "n": "Bank of Africa BF",
+   "c": 7900.0,
+   "v": null
+  },
+  {
+   "s": "BOAC",
+   "n": "Bank of Africa CI",
+   "c": 11500.0,
+   "v": null
+  },
+  {
+   "s": "BOAM",
+   "n": "Bank of Africa Mali",
+   "c": 5400.0,
+   "v": null
+  },
+  {
+   "s": "BOAN",
+   "n": "Bank of Africa Niger",
+   "c": 4850.0,
+   "v": null
+  },
+  {
+   "s": "BOAS",
+   "n": "Bank of Africa Sénégal",
+   "c": 7800.0,
+   "v": null
+  },
+  {
+   "s": "CABC",
+   "n": "Sicable CI",
+   "c": 2850.0,
+   "v": null
+  },
+  {
+   "s": "CBIBF",
+   "n": "Coris Bank International",
+   "c": 31495.0,
+   "v": null
+  },
+  {
+   "s": "CFAC",
+   "n": "CFAO Motors CI",
+   "c": 1285.0,
+   "v": null
+  },
+  {
+   "s": "CIEC",
+   "n": "CIE CI",
+   "c": 4900.0,
+   "v": null
+  },
+  {
+   "s": "ECOC",
+   "n": "Ecobank Côte d'Ivoire",
+   "c": 15345.0,
+   "v": null
+  },
+  {
+   "s": "ETIT",
+   "n": "Ecobank Transnational",
+   "c": 59.0,
+   "v": null
+  },
+  {
+   "s": "FTSC",
+   "n": "Filtisac CI",
+   "c": 1695.0,
+   "v": null
+  },
+  {
+   "s": "LNBB",
+   "n": "Loterie Nationale du Bénin",
+   "c": 3800.0,
+   "v": null
+  },
+  {
+   "s": "NEIC",
+   "n": "NEI-CEDA CI",
+   "c": 1975.0,
+   "v": null
+  },
+  {
+   "s": "NSBC",
+   "n": "NSIA Banque CI",
+   "c": 16600.0,
+   "v": null
+  },
+  {
+   "s": "NTLC",
+   "n": "Nestlé CI",
+   "c": 12500.0,
+   "v": -3.85
+  },
+  {
+   "s": "ONTBF",
+   "n": "Onatel BF",
+   "c": 2900.0,
+   "v": null
+  },
+  {
+   "s": "ORAC",
+   "n": "Orange Côte d'Ivoire",
+   "c": 19000.0,
+   "v": 0.0
+  },
+  {
+   "s": "ORGT",
+   "n": "Oragroup Togo",
+   "c": 2550.0,
+   "v": null
+  },
+  {
+   "s": "PALC",
+   "n": "Palm CI",
+   "c": 7600.0,
+   "v": null
+  },
+  {
+   "s": "PRSC",
+   "n": "Tractafric Motors CI",
+   "c": 3750.0,
+   "v": null
+  },
+  {
+   "s": "SAFC",
+   "n": "SAFCA CI",
+   "c": 3600.0,
+   "v": null
+  },
+  {
+   "s": "SCRC",
+   "n": "Sucrivoire",
+   "c": 1450.0,
+   "v": null
+  },
+  {
+   "s": "SDCC",
+   "n": "SODE CI",
+   "c": 12260.0,
+   "v": 6.61
+  },
+  {
+   "s": "SDSC",
+   "n": "Africa Global Logistics CI",
+   "c": 2700.0,
+   "v": 4.65
+  },
+  {
+   "s": "SEMC",
+   "n": "Sonoco Metal Packaging",
+   "c": 1495.0,
+   "v": null
+  },
+  {
+   "s": "SGBC",
+   "n": "Société Générale CI",
+   "c": 39450.0,
+   "v": null
+  },
+  {
+   "s": "SHEC",
+   "n": "Vivo Energy CI",
+   "c": 1900.0,
+   "v": -6.4
+  },
+  {
+   "s": "SIBC",
+   "n": "Société Ivoirienne de Banque",
+   "c": 8515.0,
+   "v": null
+  },
+  {
+   "s": "SICC",
+   "n": "Sicor CI",
+   "c": 8400.0,
+   "v": null
+  },
+  {
+   "s": "SIVC",
+   "n": "Erium CI",
+   "c": 1685.0,
+   "v": null
+  },
+  {
+   "s": "SLBC",
+   "n": "Solibra CI",
+   "c": 42290.0,
+   "v": null
+  },
+  {
+   "s": "SMBC",
+   "n": "SMB CI",
+   "c": 17605.0,
+   "v": null
+  },
+  {
+   "s": "SNTS",
+   "n": "Sonatel SN",
+   "c": 4145.0,
+   "v": null
+  },
+  {
+   "s": "SOGC",
+   "n": "SOGB CI",
+   "c": 7500.0,
+   "v": null
+  },
+  {
+   "s": "SPHC",
+   "n": "SAPH CI",
+   "c": 7800.0,
+   "v": null
+  },
+  {
+   "s": "STAC",
+   "n": "Setao CI",
+   "c": 1935.0,
+   "v": -7.19
+  },
+  {
+   "s": "STBC",
+   "n": "Sitab CI",
+   "c": 21300.0,
+   "v": null
+  },
+  {
+   "s": "TTLC",
+   "n": "TotalEnergies Marketing CI",
+   "c": 3000.0,
+   "v": null
+  },
+  {
+   "s": "TTLS",
+   "n": "TotalEnergies Marketing SN",
+   "c": 3695.0,
+   "v": null
+  },
+  {
+   "s": "UNLC",
+   "n": "Unilever CI",
+   "c": 45000.0,
+   "v": null
+  },
+  {
+   "s": "UNXC",
+   "n": "Uniwax CI",
+   "c": 1875.0,
+   "v": null
+  }
+ ],
+ "commentaire": "Quatrième séance de baisse d'affilée pour les indices phares. Dans ces phases, la question n'est pas « que vais-je gagner ? » mais « combien suis-je prêt à perdre, et sur quel horizon ? »."
+}

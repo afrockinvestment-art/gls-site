@@ -1,0 +1,42 @@
+{
+ "date": "2026-11-18",
+ "source": "BCEAO, cours de référence",
+ "taux": [
+  {
+   "code": "EUR",
+   "n": "Euro",
+   "fcfa": 655.957,
+   "note": "parité fixe"
+  },
+  {
+   "code": "USD",
+   "n": "Dollar US",
+   "fcfa": 598.06
+  },
+  {
+   "code": "JPY",
+   "n": "Yen japonais",
+   "fcfa": 3.7515
+  },
+  {
+   "code": "CNY",
+   "n": "Yuan chinois",
+   "fcfa": 89.7
+  },
+  {
+   "code": "RUB",
+   "n": "Rouble russe",
+   "fcfa": null
+  },
+  {
+   "code": "GBP",
+   "n": "Livre sterling",
+   "fcfa": 787.56
+  },
+  {
+   "code": "CHF",
+   "n": "Franc suisse",
+   "fcfa": 709.68
+  }
+ ]
+}
