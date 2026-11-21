@@ -377,7 +377,7 @@ footer a{color:var(--text)}
 .wa-float{position:fixed;right:18px;bottom:18px;z-index:35;width:56px;height:56px;border-radius:50%;background:#1DA851;display:grid;place-items:center;box-shadow:0 12px 30px rgba(0,0,0,.4)}
 .wa-float svg{width:28px;height:28px}
 .mobile-cta{display:none}
-@media (max-width:700px){.wa-float{bottom:84px}.mobile-cta{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30;gap:8px}.mobile-cta .btn{flex:1;padding:14px 10px;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.45)}body{padding-bottom:76px}}
+@media (max-width:700px){.wa-float{bottom:150px}.mobile-cta{display:flex;position:fixed;left:12px;right:12px;bottom:calc(80px + env(safe-area-inset-bottom));z-index:30;gap:8px}.mobile-cta .btn{flex:1;padding:14px 10px;font-size:15px;box-shadow:0 10px 30px rgba(0,0,0,.45)}body{padding-bottom:160px}}
 
 /* ---------- modal ---------- */
 .modal{position:fixed;inset:0;z-index:60;display:none;align-items:flex-start;justify-content:center;background:rgba(3,7,16,.78);padding:24px 16px;overflow-y:auto}
@@ -807,7 +807,7 @@ input.touched:invalid{border-color:#D0342C}
 
 <div class="mobile-cta">
   <button class="btn btn-orange" data-open="mc">Masterclass gratuite</button>
-  <button class="btn btn-line" data-open="buy" data-plan="formation" style="background:var(--navy)">Formation</button>
+  <button class="btn btn-line" data-open="buy" data-plan="formation" style="background:var(--navy)">Formation 12 déc.</button>
 </div>
 
 <!-- Inscription masterclass -->
@@ -819,7 +819,7 @@ input.touched:invalid{border-color:#D0342C}
       <div class="step" data-step="1">
         <label class="f" for="mcName">Prénom et nom<input type="text" id="mcName" autocomplete="name" required></label>
         <label class="f" for="mcPhone">Numéro WhatsApp <small>avec l'indicatif, par exemple +226 70 00 00 00</small><input type="tel" id="mcPhone" autocomplete="tel" required pattern="^\+?[0-9 ]{8,18}$"></label>
-        <label class="f" for="mcEmail">E-mail <small>facultatif</small><input type="email" id="mcEmail" autocomplete="email"></label>
+        <label class="f" for="mcEmail">E-mail <small>pour recevoir le lien et ton mail de bienvenue</small><input type="email" id="mcEmail" autocomplete="email" required></label>
         <p class="err" id="mcErr1"></p>
         <div class="row"><button type="button" class="btn btn-orange" data-next>Continuer</button></div>
       </div>
@@ -838,6 +838,7 @@ input.touched:invalid{border-color:#D0342C}
           <label class="choice"><input type="radio" name="level" value="trader-pro"> Je suis trader confirmé</label>
         </div>
         <label class="consent" for="mcConsent"><input type="checkbox" id="mcConsent"> J'accepte d'être contacté par GLS sur WhatsApp au sujet des masterclass et des formations.</label>
+        <label class="consent" for="mcNews"><input type="checkbox" id="mcNews"> J'accepte de recevoir par e-mail le point marché et les analyses d'AFROCK Investment. Désinscription en un clic.</label>
         <p class="err" id="mcErr2"></p>
         <div class="row"><button type="button" class="btn btn-back" data-prev>Retour</button><button type="submit" class="btn btn-orange">Valider mon inscription</button></div>
       </div>
@@ -871,10 +872,12 @@ input.touched:invalid{border-color:#D0342C}
           <label class="f" for="rpPrenom">Prénom<input type="text" id="rpPrenom" autocomplete="given-name" required></label>
         </div>
         <label class="f" for="rpWa">Numéro WhatsApp <small>avec l'indicatif, ex. +226…</small><input type="tel" id="rpWa" autocomplete="tel" inputmode="tel" required pattern="^\+?[0-9 ]{8,18}$"></label>
+        <label class="f" for="rpEmail">E-mail <small>pour ton mail de bienvenue et les supports</small><input type="email" id="rpEmail" autocomplete="email" required></label>
         <label class="f" for="rpDep">Numéro utilisé pour le dépôt<input type="tel" id="rpDep" inputmode="tel" required pattern="^\+?[0-9 ]{8,18}$"></label>
         <label class="f" for="rpMontant">Montant déposé <small>(F CFA)</small><input type="text" id="rpMontant" inputmode="numeric" required pattern="^[0-9 ]{3,9}$">
           <span class="chips" id="rpChips"><button type="button" data-v="40000">40 000</button><button type="button" data-v="65000">65 000</button><button type="button" data-v="120000">120 000</button><button type="button" data-v="190000">190 000</button></span>
         </label>
+        <label class="consent" for="rpNews" style="color:var(--muted);margin-bottom:8px"><input type="checkbox" id="rpNews"> J'accepte de recevoir par e-mail le point marché et les analyses d'AFROCK Investment. Désinscription en un clic.</label>
         <p class="rp-err" id="rpErr" role="alert"></p>
         <button type="submit" class="btn btn-orange">Valider mon inscription</button>
         <p class="rp-note">40 000 F : formation seule · 65 000 F : formation + suivi Standard 12 mois (offre spéciale, paiement en une fois) · 120 000 / 190 000 F : formation + suivi VIP ou Personnalisé sur 1 an.</p>
@@ -904,9 +907,10 @@ input.touched:invalid{border-color:#D0342C}
       <div class="step" data-step="2">
         <label class="f" for="bName">Prénom et nom<input type="text" id="bName" autocomplete="name" required></label>
         <label class="f" for="bPhone">Numéro WhatsApp <small>avec l'indicatif</small><input type="tel" id="bPhone" autocomplete="tel" required pattern="^\+?[0-9 ]{8,18}$"></label>
-        <label class="f" for="bEmail">E-mail <small>pour recevoir les supports</small><input type="email" id="bEmail" autocomplete="email"></label>
+        <label class="f" for="bEmail">E-mail <small>pour recevoir les supports</small><input type="email" id="bEmail" autocomplete="email" required></label>
         <label class="f" for="bCountry">Pays de résidence<input type="text" id="bCountry" autocomplete="country-name" required></label>
         <label class="consent" for="bTerms"><input type="checkbox" id="bTerms"> J'ai compris que la formation et le suivi sont pédagogiques et ne garantissent aucun rendement.</label>
+        <label class="consent" for="bNews"><input type="checkbox" id="bNews"> J'accepte de recevoir par e-mail le point marché et les analyses d'AFROCK Investment. Désinscription en un clic.</label>
         <p class="err" id="buyErr2"></p>
         <div class="row"><button type="button" class="btn btn-back" data-prev>Retour</button><button type="submit" class="btn btn-orange">Voir le paiement</button></div>
       </div>
@@ -927,6 +931,10 @@ input.touched:invalid{border-color:#D0342C}
   </div>
 </div>
 
+<!-- Formulaire masqué : permet à Netlify de détecter le formulaire « inscriptions » au déploiement -->
+<form name="inscriptions" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input name="bot-field"><input name="type"><input name="nom"><input name="prenom"><input name="whatsapp"><input name="email"><input name="residence"><input name="profil"><input name="groupe"><input name="pays"><input name="formule"><input name="montant"><input name="reference"><input name="numeroDepot"><input name="newsletter"><input name="date">
+</form>
 <script>
 /* ============ À RENSEIGNER AVANT LA MISE EN LIGNE ============ */
 const CONFIG = {
@@ -1150,10 +1158,20 @@ document.querySelectorAll("[data-open]").forEach(b => b.addEventListener("click"
 }));
 function valid(inputs, errEl){
   let ok = true; inputs.forEach(i => { i.classList.add("touched"); if (!i.checkValidity() || (i.required && !i.value.trim())) ok = false; });
-  errEl.textContent = ok ? "" : "Vérifie les champs en rouge : le nom et un numéro WhatsApp avec indicatif sont nécessaires.";
+  errEl.textContent = ok ? "" : "Vérifie les champs en rouge : nom, numéro WhatsApp avec indicatif et e-mail sont nécessaires.";
   return ok;
 }
-function send(p){ if (!CONFIG.formEndpoint) return; try { fetch(CONFIG.formEndpoint,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(p)}); } catch(e){} }
+/* Chaque inscription est enregistrée dans Netlify Forms (liste exportable en CSV), puis envoyée à Brevo
+   par la fonction netlify/functions/submission-created.js (contact + mail de bienvenue). */
+const FORM_FIELDS = ["type","nom","prenom","whatsapp","email","residence","profil","groupe","pays","formule","montant","reference","numeroDepot","newsletter","date"];
+function send(p){
+  try {
+    const body = new URLSearchParams({"form-name":"inscriptions"});
+    FORM_FIELDS.forEach(k => body.append(k, p[k] == null ? "" : String(p[k])));
+    fetch("/", {method:"POST", headers:{"Content-Type":"application/x-www-form-urlencoded"}, body: body.toString()}).catch(()=>{});
+  } catch(e){}
+  if (CONFIG.formEndpoint){ try { fetch(CONFIG.formEndpoint,{method:"POST",mode:"no-cors",headers:{"Content-Type":"text/plain"},body:JSON.stringify(p)}); } catch(e){} }
+}
 
 const mcM = $("#mcModal");
 mcM.querySelector("[data-next]").addEventListener("click", () => { if (valid([$("#mcName"),$("#mcPhone"),$("#mcEmail")], $("#mcErr1"))) setStep(mcM,2); });
@@ -1164,7 +1182,7 @@ $("#mcForm").addEventListener("submit", e => {
   if (!$("#mcConsent").checked){ $("#mcErr2").textContent = "Coche la case pour recevoir le lien sur WhatsApp."; return; }
   $("#mcErr2").textContent = "";
   const diaspora = where.value === "hors";
-  send({type:"masterclass",nom:$("#mcName").value.trim(),whatsapp:$("#mcPhone").value.trim(),email:$("#mcEmail").value.trim(),residence:where.value,profil:level.value,groupe:diaspora?"Diaspora":"Investisseurs",date:new Date().toISOString()});
+  send({type:"masterclass",nom:$("#mcName").value.trim(),whatsapp:$("#mcPhone").value.trim(),email:$("#mcEmail").value.trim(),residence:where.value,profil:level.value,groupe:diaspora?"Diaspora":"Investisseurs",newsletter:$("#mcNews").checked?"oui":"non",date:new Date().toISOString()});
   $("#mcDoneTitle").textContent = `Merci ${$("#mcName").value.trim().split(" ")[0]}, ta place est réservée.`;
   $("#mcDoneText").textContent = diaspora ? "Ta masterclass Diaspora a lieu le dimanche 6 décembre à 20 h GMT (21 h Paris, 15 h New York). Dernière étape : rejoins le groupe pour recevoir le lien." : "Ta masterclass Investisseurs a lieu le dimanche 29 novembre à 20 h GMT. Dernière étape : rejoins le groupe pour recevoir le lien.";
   $("#mcGroup").href = diaspora ? CONFIG.groupeDiaspora : CONFIG.groupeInvestisseurs;
@@ -1190,7 +1208,7 @@ $("#buyForm").addEventListener("submit", e => {
   $("#payNum").textContent = CONFIG.numeroPaiement; $("#payName").textContent = CONFIG.nomPaiement;
   $("#sendProof").href = waLink(`Bonjour Ludovic, je viens de payer la formation BRVM du 12 décembre.\nNom : ${name}\nFormule : ${p.label}\nMontant : ${fcfa(p.amount)}\nRéférence : ${ref}\nPays : ${$("#bCountry").value.trim()}\nJe joins la capture de mon paiement.`);
   if (CONFIG.lienPaiementEnLigne){ $("#payOnline").href = CONFIG.lienPaiementEnLigne; $("#payOnline").hidden = false; }
-  send({type:"formation",nom:name,whatsapp:$("#bPhone").value.trim(),email:$("#bEmail").value.trim(),pays:$("#bCountry").value.trim(),formule:p.label,montant:p.amount,reference:ref,date:new Date().toISOString()});
+  send({type:"formation",nom:name,whatsapp:$("#bPhone").value.trim(),email:$("#bEmail").value.trim(),pays:$("#bCountry").value.trim(),formule:p.label,montant:p.amount,reference:ref,newsletter:$("#bNews").checked?"oui":"non",date:new Date().toISOString()});
   setStep(buyM,3);
 });
 $("#copyRef").addEventListener("click", async () => { try { await navigator.clipboard.writeText($("#sumRef").textContent); $("#copyRef").textContent = "Copié"; } catch(e){ $("#copyRef").textContent = "Sélectionne-la"; } });
@@ -1213,7 +1231,7 @@ $("#rpChips").addEventListener("click", e => {
 });
 $("#rpForm").addEventListener("submit", e => {
   e.preventDefault();
-  const f = [$("#rpNom"),$("#rpPrenom"),$("#rpWa"),$("#rpDep"),$("#rpMontant")]; let ok = true;
+  const f = [$("#rpNom"),$("#rpPrenom"),$("#rpWa"),$("#rpEmail"),$("#rpDep"),$("#rpMontant")]; let ok = true;
   f.forEach(i => { i.classList.add("touched"); if (!i.checkValidity() || !i.value.trim()) ok = false; });
   if (!ok){ $("#rpErr").textContent = "Vérifie les champs en rouge."; return; }
   $("#rpErr").textContent = "";
@@ -1221,7 +1239,7 @@ $("#rpForm").addEventListener("submit", e => {
   const montant = +$("#rpMontant").value.replace(/\s/g, "");
   $("#rpSend").href = waLink(`Bonjour Ludovic, inscription à la formation BRVM du 12 décembre.\nNom : ${nom}\nPrénom : ${prenom}\nWhatsApp : ${wa}\nNuméro du dépôt : ${dep}\nMontant déposé : ${nf(montant)} F CFA\nJe joins la capture de mon dépôt.`);
   $("#rpDoneT").textContent = `Merci ${prenom}, c'est presque fini.`;
-  send({type:"formation", nom, prenom, whatsapp:wa, numeroDepot:dep, montant, date:new Date().toISOString()});
+  send({type:"formation", nom, prenom, whatsapp:wa, email:$("#rpEmail").value.trim(), numeroDepot:dep, montant, newsletter:$("#rpNews").checked?"oui":"non", date:new Date().toISOString()});
   rp.classList.add("sent"); rp.scrollTo(0,0); $("#rpSend").focus({preventScroll:true});
 });
 </script>

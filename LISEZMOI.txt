@@ -28,3 +28,45 @@ SITE GLS : MISE EN LIGNE
 
 6. VIDÉO
    Remplace gls-lancement.mp4 par la pub finale (même nom) et poster.jpg par une image de la vidéo.
+
+=====================================================================
+INSCRIPTIONS, MAIL DE BIENVENUE ET POINT MARCHÉ (Netlify + Brevo)
+=====================================================================
+
+1. LA LISTE DES INSCRITS (aucun réglage)
+   Chaque inscription (masterclass, réservation de formation, page #inscription) est enregistrée
+   dans Netlify : Site > Forms > « inscriptions ». Tu y vois nom, WhatsApp, e-mail, événement,
+   montant, accord pour le point marché, et tu peux tout exporter en CSV (Excel).
+   Fonctionne avec le simple glisser-déposer du zip. Offre gratuite Netlify : 100 inscriptions par mois.
+   Important : seule la version publiée sur Netlify collecte les inscriptions, pas l'aperçu sur claude.ai.
+
+2. MAIL DE BIENVENUE AUTOMATIQUE (Brevo, gratuit jusqu'à 300 e-mails par jour)
+   a. Dans Brevo : créer deux listes « Inscrits GLS » et « Point marché AFROCK » (noter leurs numéros).
+   b. Contacts > Paramètres > Attributs : EVENEMENTS et PAYS (type texte). WHATSAPP, FIRSTNAME et LASTNAME existent déjà dans Brevo.
+   c. Expéditeurs : valider l'adresse d'envoi (idéalement une adresse à ton nom de domaine).
+   d. Paramètres SMTP et API : créer une clé API.
+   e. Dans Netlify : Site configuration > Environment variables, ajouter :
+        BREVO_API_KEY            = la clé API
+        BREVO_LIST_INSCRITS      = numéro de la liste « Inscrits GLS »
+        BREVO_LIST_POINT_MARCHE  = numéro de la liste « Point marché AFROCK »
+        SENDER_EMAIL             = l'adresse d'envoi validée
+        SENDER_NAME              = GLS Finance
+        GROUPE_WHATSAPP          = lien du groupe WhatsApp (facultatif)
+        SITE_URL                 = adresse du site (facultatif)
+   f. ATTENTION : la fonction d'envoi (netlify/functions) ne marche pas avec le glisser-déposer.
+      Il faut relier le site à GitHub (Add new site > Import from Git) ou déployer avec la commande
+      « netlify deploy --prod ». Ensuite chaque inscrit est ajouté dans Brevo et reçoit son mail de bienvenue.
+
+3. LE POINT MARCHÉ PAR E-MAIL (chaque lundi à 7 h GMT)
+   - Il est envoyé uniquement aux inscrits qui ont coché la case d'accord (liste « Point marché AFROCK »).
+   - Contenu : indices, plus fortes hausses et baisses, « La lecture d'AFROCK Investment »
+     (champ commentaire de data/marche.json) et, si tu la remplis, la rubrique « Titres à surveiller »
+     (data/opportunites.json). Une rubrique vide n'apparaît pas : rien n'est inventé.
+   - Dans GitHub : Settings > Secrets and variables > Actions, ajouter BREVO_API_KEY,
+     BREVO_LIST_POINT_MARCHE, SENDER_EMAIL et SITE_URL.
+   - Envoi manuel possible : onglet Actions > « Point marché AFROCK » > Run workflow.
+   - Pour un e-mail de test sur ton ordinateur : python scripts/point_marche.py --test ton@email.com
+   - Exemple pour data/opportunites.json :
+       {"titre_semaine": "Titres à surveiller cette semaine",
+        "a_surveiller": [{"titre": "SNTS Sonatel", "texte": "Ce qu'on observe, pourquoi c'est intéressant, et le risque principal."}]}
+     Présente-les toujours comme des titres à surveiller, jamais comme des conseils d'achat.
